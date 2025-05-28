@@ -1,0 +1,7 @@
+- name: arguments level variables
+  hosts: local
+  connection: local
+  tasks:
+  - name: print viswesh info
+    ansible.builtin.debug:
+       msg: "I am {{ NAME }} working at {{ COMPANY }}"
