@@ -7,5 +7,5 @@
     EXPERIENCE: 4 years
   tasks:
   - name: print viswesh info
-    ansible builtin debug:
+    ansible.builtin.debug:
       msg: "I am {{ NAME }} working at {{ COMPANY }} with {{ EXPERIENCE }} of Experience"
