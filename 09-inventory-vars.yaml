@@ -1,0 +1,7 @@
+- name: inventory level variables
+  hosts: local
+  connection: local
+  tasks:
+  - name: print viswesh info
+    ansible.builtin.debug:
+      msg: "I am {{ NAME }} working at {{ COMPANY }} with {{ EXPERIENCE }} of Experience"
