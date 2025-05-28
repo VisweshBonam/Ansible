@@ -11,8 +11,8 @@
     private: false
   tasks:
   - name: type something
-    vars:
-      SOMETHING: "task levelprefernce"
+    # vars:
+    #   SOMETHING: "task levelprefernce"
     ansible.builtin.debug:
       msg: "{{ SOMETHING }}"
   
