@@ -1,0 +1,17 @@
+- name: task level variables
+  hosts: local
+  connection: local
+  vars:
+    NAME: Viswesh
+    COMPANY: Apoorva 
+    EXPERIENCE: 4 years
+  tasks:
+  - name: print viswesh info
+    vars:
+      NAME: Siri
+    ansible.builtin.debug:
+      msg: "I am {{NAME}} working at {{ COMPANY }} with {{ EXPERIENCE }} of Experience"
+    
+  - name: print viswesh info again
+    ansible.builtin.debug:
+      msg: "I am {{NAME}} working at {{ COMPANY }} with {{ EXPERIENCE }} of Experience"
