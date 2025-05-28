@@ -1,0 +1,19 @@
+- name: preferences among variables
+  hosts: local
+  connection: local
+  vars:
+    SOMETHING: "Play level variables"
+  vars_files:
+  - info.yaml
+  vars_prompt:
+  - name: SOMETHING
+    prompt: please enter preferences
+    private: false
+  tasks:
+  - name: type something
+  vars:
+    SOMETHING: "task levelprefernce"
+    ansible.builtin.debug:
+       msg: "{{ SOMETHING }}"
+  
+   
