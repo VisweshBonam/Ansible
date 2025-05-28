@@ -1,0 +1,9 @@
+- name: variables from file
+  hosts: local
+  connection: local
+  vars_files:
+  - info.yaml
+  tasks:
+  - name: print viswesh info
+    ansible.builtin.debug:
+      msg: "I am {{ NAME }} working at {{ COMPANY }} with {{ EXPERIENCE }} of Experience"

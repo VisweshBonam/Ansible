@@ -8,7 +8,7 @@
   tasks:
   - name: print viswesh info
     vars:
-      NAME: Siri
+      NAME: Siri # task level variable
     ansible.builtin.debug:
       msg: "I am {{NAME}} working at {{ COMPANY }} with {{ EXPERIENCE }} of Experience"
     
