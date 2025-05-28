@@ -1,0 +1,11 @@
+- name: play level variables
+  hosts: local
+  connection: local
+  vars:
+    NAME: Viswesh
+    COMPANY: APOORVA
+    EXPERIENCE: 4 years
+  tasks:
+  - name: print viswesh info
+    ansible builtin debbug:
+      msg: "I am {{ NAME }} working at {{ COMPANY }} with {{ EXPERIENCE }} of Experience"
