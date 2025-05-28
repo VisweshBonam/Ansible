@@ -3,8 +3,8 @@
   connection: local
   vars:
     SOMETHING: "Play level variables"
-  vars_files:
-  - info.yaml
+  # vars_files:
+  # - info.yaml
   vars_prompt:
   - name: SOMETHING
     prompt: please enter preferences
