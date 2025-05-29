@@ -76,7 +76,6 @@
   hosts: local
   connection: local
   tasks:
-  vars:
   - name: print as lower CASE
     vars:
       name: Viswesh Bonam
