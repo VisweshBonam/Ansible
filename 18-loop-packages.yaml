@@ -30,3 +30,19 @@
     - {name: 'nginx', state: 'absent'}
     - {name: 'zip', state: 'absent'}
     - {name: 'nodejs', state: 'present'}
+
+
+# To install and Uninstall packages through command line
+
+# - name: Install and remove packages
+#   hosts: frontend
+#   become: yes
+#   tasks:
+#     - name: Install and remove packages using a loop
+#       ansible.builtin.package:
+#         name: "{{ item.name }}"
+#         state: "{{ item.state }}"
+#       loop: "{{ packages }}"
+
+# Command line
+#  ansible-playbook -i inventory.ini 18-loop-packages.yaml -e 'packages=[{"name":"nginx","state":"absent"},{"name":"zip","state":"absent"},{"name":"nodejs","state":"present"}]'
