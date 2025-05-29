@@ -90,10 +90,9 @@
 - name: Check IP is valid or not
   hosts: local
   connection: local
-  
+  vars:
+    IP: "300.255.255.255"
   tasks:
   - name: print IP is valid or not
-    vars:
-      IP:"300.255.255.255"
     ansible.builtin.debug:
       msg: "The given IP is {{ IP | ansible.utils.ipaddr }} "
