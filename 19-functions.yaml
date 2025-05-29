@@ -41,17 +41,31 @@
 
 # list to dictionary
 
-- name: convert list to dictionary
+# - name: convert list to dictionary
+#   hosts: local
+#   connection: local
+#   vars:
+#     CRICKETERS:
+#     - {'key': 'Batsman', 'value': 'Rohit'}
+#     - {'key': 'Bowler', 'value': 'Bumrah'}
+#     - {'key': 'Keeper', 'value': 'Pant'}
+#   tasks:
+#   - name: print list as object
+#     ansible.builtin.debug:
+#       msg: "Cricket info : {{ CRICKETERS | items2dict }}"
+
+# ---------------------------------------------------------------
+
+# change to UPPER CASE
+
+- name: convert to UPPER CASE
   hosts: local
   connection: local
-  vars:
-    CRICKETERS:
-    - {'key': 'Batsman', 'value': 'Rohit'}
-    - {'key': 'Bowler', 'value': 'Bumrah'}
-    - {'key': 'Keeper', 'value': 'Pant'}
   tasks:
-  - name: print list as object
+  - name: print as UPPER CASE
+    vars:
+      name: Viswesh Bonam
     ansible.builtin.debug:
-      msg: "Cricket info : {{ CRICKETERS | items2dict }}"
+      msg: "I am {{ name | upper }}"
 
 
