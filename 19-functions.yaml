@@ -1,84 +1,98 @@
-- name: default function
-  hosts: local
-  connection: local
-  tasks:
-  - name: print default value
-    ansible.builtin.debug:
-      msg: "{{ person  | default('vishu') }}"
+# - name: default function
+#   hosts: local
+#   connection: local
+#   tasks:
+#   - name: print default value
+#     ansible.builtin.debug:
+#       msg: "{{ person  | default('vishu') }}"
 
 # ---------------------------------------------------------------
 
 # string to list
 
-- name: string to list
-  hosts: local
-  connection: local
-  vars:
-    CRICKETERS: rohit,virat,bumrah,gill
-  tasks:
-  - name: convert string to list
-    ansible.builtin.debug:
-      msg: "Cricketers are : {{ CRICKETERS | split(',') }}"
+# - name: string to list
+#   hosts: local
+#   connection: local
+#   vars:
+#     CRICKETERS: rohit,virat,bumrah,gill
+#   tasks:
+#   - name: convert string to list
+#     ansible.builtin.debug:
+#       msg: "Cricketers are : {{ CRICKETERS | split(',') }}"
 
 # ---------------------------------------------------------------
 
 # dictionary to list
 
-- name: convert dictionary to list
-  hosts: local
-  connection: local
-  vars:
-    CRICKET:
-      Batsman: rohit
-      Bowler: bumrah
-      Keeper: pant
-  tasks:
-  - name: print object as list
-    ansible.builtin.debug:
-      msg: "Cricket info : {{ CRICKET | dict2items }}"
+# - name: convert dictionary to list
+#   hosts: local
+#   connection: local
+#   vars:
+#     CRICKET:
+#       Batsman: rohit
+#       Bowler: bumrah
+#       Keeper: pant
+#   tasks:
+#   - name: print object as list
+#     ansible.builtin.debug:
+#       msg: "Cricket info : {{ CRICKET | dict2items }}"
 
 # ---------------------------------------------------------------
 
 # list to dictionary
 
-- name: convert list to dictionary
-  hosts: local
-  connection: local
-  vars:
-    CRICKETERS:
-    - {'key': 'Batsman', 'value': 'Rohit'}
-    - {'key': 'Bowler', 'value': 'Bumrah'}
-    - {'key': 'Keeper', 'value': 'Pant'}
-  tasks:
-  - name: print list as object
-    ansible.builtin.debug:
-      msg: "Cricket info : {{ CRICKETERS | items2dict }}"
+# - name: convert list to dictionary
+#   hosts: local
+#   connection: local
+#   vars:
+#     CRICKETERS:
+#     - {'key': 'Batsman', 'value': 'Rohit'}
+#     - {'key': 'Bowler', 'value': 'Bumrah'}
+#     - {'key': 'Keeper', 'value': 'Pant'}
+#   tasks:
+#   - name: print list as object
+#     ansible.builtin.debug:
+#       msg: "Cricket info : {{ CRICKETERS | items2dict }}"
 
 # ---------------------------------------------------------------
 
 # change to UPPER CASE
 
-- name: convert to UPPER CASE
-  hosts: local
-  connection: local
-  tasks:
-  - name: print as UPPER CASE
-    vars:
-      name: Viswesh Bonam
-    ansible.builtin.debug:
-      msg: "I am {{ name | upper }}"
+# - name: convert to UPPER CASE
+#   hosts: local
+#   connection: local
+#   tasks:
+#   - name: print as UPPER CASE
+#     vars:
+#       name: Viswesh Bonam
+#     ansible.builtin.debug:
+#       msg: "I am {{ name | upper }}"
 
 # ---------------------------------------------------------------
 
 # change to Lower CASE
 
-- name: convert to Lower CASE
+# - name: convert to Lower CASE
+#   hosts: local
+#   connection: local
+#   tasks:
+#   - name: print as lower CASE
+#     vars:
+#       name: Viswesh Bonam
+#     ansible.builtin.debug:
+#       msg: "I am {{ name | lower}}"
+
+
+# ---------------------------------------------------------------
+
+# To check ip is valid or not (IP MAX = 255.255.255.255)
+
+- name: Check IP is valid or not
   hosts: local
   connection: local
+  vars:
+    IP:"300.255.255.255"
   tasks:
-  - name: print as lower CASE
-    vars:
-      name: Viswesh Bonam
+  - name: print IP is valid or not
     ansible.builtin.debug:
-      msg: "I am {{ name | lower}}"
-
+      msg: "The given IP is {{ IP | ansible.utils.ipaddr }} "
