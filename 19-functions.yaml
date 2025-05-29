@@ -9,12 +9,29 @@
 
 # string to list
 
-- name: string to list
+# - name: string to list
+#   hosts: local
+#   connection: local
+#   vars:
+#     CRICKETERS: rohit,virat,bumrah,gill
+#   tasks:
+#   - name: convert string to list
+#     ansible.builtin.debug:
+#       msg: "Cricketers are : {{ CRICKETERS | split(',') }}"
+
+
+# dictionary to list
+
+- name: convert dictionary to list
   hosts: local
   connection: local
   vars:
-    CRICKETERS: rohit,virat,bumrah,gill
+    CRICKET:
+      Batsman: rohit
+      Bowler: bumrah
+      Keeper: pant
   tasks:
-  - name: convert string to list
+  - name: print object as list
     ansible.builtin.debug:
-      msg: "Cricketers are : {{ CRICKETERS | split(',') }}"
+      msg: "Cricket info : {{ CRICKET | dict2items }}"
+
