@@ -3,7 +3,7 @@
   become: yes
   tasks:
   - name: to get output of ls using shell 
-    ansible.builtin.shell: "ls -ltr > /tmp/output.txt"
+    ansible.builtin.shell: "ls -ltr > /tmp/output.txt" # for command it will not work because of redirection >
     register: output_value
 
   - name: print output value
@@ -11,7 +11,7 @@
       msg: "{{ output_value }}"
 
   - name: to get output of ls using command
-    ansible.builtin.command: "ls -ltr"
+    ansible.builtin.command: "ls -ltr" # this willwork, becasue we are not using any special things like (redirections, pipe)
     register: output_commandvalue
 
   - name: print output output_commandvalue
