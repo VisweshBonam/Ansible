@@ -58,14 +58,28 @@
 
 # change to UPPER CASE
 
-- name: convert to UPPER CASE
+# - name: convert to UPPER CASE
+#   hosts: local
+#   connection: local
+#   tasks:
+#   - name: print as UPPER CASE
+#     vars:
+#       name: Viswesh Bonam
+#     ansible.builtin.debug:
+#       msg: "I am {{ name | upper }}"
+
+# ---------------------------------------------------------------
+
+# change to Lower CASE
+
+- name: convert to Lower CASE
   hosts: local
   connection: local
   tasks:
-  - name: print as UPPER CASE
+  vars:
+  - name: print as lower CASE
     vars:
       name: Viswesh Bonam
     ansible.builtin.debug:
-      msg: "I am {{ name | upper }}"
-
+      msg: "I am {{ name | lower}}"
 
