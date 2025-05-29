@@ -91,7 +91,7 @@
   hosts: local
   connection: local
   vars:
-    IP: "300.255.255.255"
+    IP: "172.31.41.184"
   tasks:
   - name: print IP is valid or not
     ansible.builtin.debug:
