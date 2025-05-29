@@ -1,3 +1,5 @@
+
+# To install packages
 - name: install packages through loops
   hosts: frontend
   become: yes
@@ -11,4 +13,20 @@
     - nginx
     - zip
     - mysql
-     
+
+
+# To install and Uninstall packages
+
+- name: Install and remove packages
+  hosts: frontend
+  become: yes
+  tasks:
+  - name: install and remove packages through loops
+    ansible.builtin.package:
+      name: "{{ item.name }}"
+      state: "{{ item.state}}"
+    
+    loop:
+    - {name: 'nginx', state: 'absent'}
+    - {name: 'zip', state: 'absent'}
+    - {name: 'nodejs', state: 'present'}
