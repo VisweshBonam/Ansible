@@ -5,3 +5,16 @@
   - name: print default value
     ansible.builtin.debug:
       msg: "{{ person  | default('vishu') }}"
+
+
+# string to list
+
+- name: string to list
+  hosts: local
+  connection: local
+  vars:
+    CRICKETERS: rohit,virat,bumrah,gill
+  tasks:
+  - name: convert string to list
+    ansible.builtin.debug:
+      msg: "Cricketers are : {{ CRICKETERS | split(',') }}"
