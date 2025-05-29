@@ -1,0 +1,11 @@
+- name: shell vs command
+  hosts: frontend
+  become: yes
+  tasks:
+  - name: to get output of ls using shell command
+    ansible.builtin.shell: "ls -ltr > /tmp/output.txt"
+    register: output_value
+
+  - name: print output value
+    ansible.builtin.debug:
+      msg: "{{ output_value }}"
