@@ -11,7 +11,7 @@
       msg: "{{ output_value }}"
 
   - name: to get output of ls using command
-    ansible.builtin.debug: "ls -ltr"
+    ansible.builtin.command: "ls -ltr"
     register: output_commandvalue
 
   - name: print output output_commandvalue
