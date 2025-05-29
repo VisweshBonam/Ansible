@@ -6,6 +6,7 @@
 #     ansible.builtin.debug:
 #       msg: "{{ person  | default('vishu') }}"
 
+# ---------------------------------------------------------------
 
 # string to list
 
@@ -19,19 +20,38 @@
 #     ansible.builtin.debug:
 #       msg: "Cricketers are : {{ CRICKETERS | split(',') }}"
 
+# ---------------------------------------------------------------
 
 # dictionary to list
 
-- name: convert dictionary to list
+# - name: convert dictionary to list
+#   hosts: local
+#   connection: local
+#   vars:
+#     CRICKET:
+#       Batsman: rohit
+#       Bowler: bumrah
+#       Keeper: pant
+#   tasks:
+#   - name: print object as list
+#     ansible.builtin.debug:
+#       msg: "Cricket info : {{ CRICKET | dict2items }}"
+
+# ---------------------------------------------------------------
+
+# list to dictionary
+
+- name: convert list to dictionary
   hosts: local
   connection: local
   vars:
-    CRICKET:
-      Batsman: rohit
-      Bowler: bumrah
-      Keeper: pant
+    CRICKETERS:
+    - {'key': 'Batsman', 'value': 'Rohit'}
+    - {'key': 'Bowler', 'value': 'Bumrah'}
+    - {'key': 'Keeper', 'value': 'Pant'}
   tasks:
-  - name: print object as list
+  - name: print list as object
     ansible.builtin.debug:
-      msg: "Cricket info : {{ CRICKET | dict2items }}"
+      msg: "Cricket info : {{ CRICKETERS | items2dict }}"
+
 
