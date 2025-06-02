@@ -205,7 +205,7 @@
 #-----------------------------------------------------------
 
 - name: check default function
-  host: local
+  hosts: local
   connections: local
   tasks:
   
