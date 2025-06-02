@@ -76,11 +76,11 @@
   connection: local
   vars_prompt:
   - name: print USERNAME
-    prompt: please enter your USERNAME
+    prompt: please enter your username 
     private: yes
 
   - name: print PASSWORD
-    prompt: please enter your PASSWORD
+    prompt: please enter your password
     private: yes
 
   tasks:
