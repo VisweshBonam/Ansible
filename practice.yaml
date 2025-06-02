@@ -186,18 +186,29 @@
 
 #--------------------------------------------------------
 
-- name: install and uninstall packages using loops
-  hosts: frontend
-  become: yes
-  tasks:
+# - name: install and uninstall packages using loops
+#   hosts: frontend
+#   become: yes
+#   tasks:
 
-  - name: install and uninstall
-    ansible.builtin.dnf:
-      name: "{{ item.name }}"
-      state: "{{ item. state }}"
+#   - name: install and uninstall
+#     ansible.builtin.dnf:
+#       name: "{{ item.name }}"
+#       state: "{{ item. state }}"
     
-    loop:
+#     loop:
 
-    - {"name": "nginx" , "state": "absent" }
-    - {"name": "zip" , "state": "present"}
-    - {"name": "mysql", "state": "absent"}
+#     - {"name": "nginx" , "state": "absent" }
+#     - {"name": "zip" , "state": "present"}
+#     - {"name": "mysql", "state": "absent"}
+
+#-----------------------------------------------------------
+
+- name: check default function
+  host: local
+  connections: local
+  tasks:
+  
+  - name: print default value
+    ansible.builtin.debug:
+      msg: "{{ person | default('vishu')}}"
