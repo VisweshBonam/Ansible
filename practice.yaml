@@ -134,21 +134,21 @@
 
 #--------------------------------------------------------
 
-- name: install packages
+- name: playbook control using facts
   hosts: frontend
   become: yes
   tasks:
-  - name: install packages when its Redhat
+
+  - name: install when os-family is Redhat
     ansible.builtin.dnf:
       name: nginx
       state: present
     when: ansible_os_family == "RedHat"
 
-  - name: install packages when its debian
+  - name: instll when os-family is Debian
     ansible.builtin.apt:
       name: nginx
       state: present
     when: ansible_os_family == "Debian"
-
 
 
