@@ -28,13 +28,13 @@
   hosts: local
   connection: local
   vars:
-    NAME: Suresh
-    Age: 53
+    NAME: Viswesh
+    Age: 24
   tasks:
 
   - name: print info
     vars:
-      NAME: Viswesh
-      Age: 26
+      NAME: Suresh
+      Age: 53
     ansible.builtin.debug:
       msg: "I am {{ NAME }} , with {{ Age }}"
