@@ -27,22 +27,34 @@
 #--------------------------------------------------------
 
 
-- name: prefernce b/w play and task level\
+# - name: prefernce b/w play and task level\
+#   hosts: local
+#   connection: local
+#   vars:
+#     NAME: Viswesh
+#     Age: 24
+#   tasks:
+
+#   - name: print info
+#     vars:
+#       NAME: Suresh
+#       Age: 53
+#     ansible.builtin.debug:
+#       msg: "I am {{ NAME }} , with {{ Age }}"
+
+#   - name: print play info
+#     ansible.builtin.debug:
+#       msg: "I am {{ NAME }} , with {{ Age }}"
+
+   #--------------------------------------------------------
+
+- name: print file level variable
   hosts: local
   connection: local
-  vars:
-    NAME: Viswesh
-    Age: 24
+  vars_files:
+  - practiceinfo.yaml
   tasks:
-
-  - name: print info
-    vars:
-      NAME: Suresh
-      Age: 53
-    ansible.builtin.debug:
-      msg: "I am {{ NAME }} , with {{ Age }}"
-
-  - name: print play info
+  - name: print info\
     ansible.builtin.debug:
       msg: "I am {{ NAME }} , with {{ Age }}"
 
