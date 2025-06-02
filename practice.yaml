@@ -215,13 +215,30 @@
 
 #-----------------------------------------------------------
 
-- name: string to list
+# - name: string to list
+#   hosts: local
+#   connection: local
+#   vars:
+#     CRICKETERS: "rohit,virat,bumrah"
+#   tasks:
+
+#   - name: print string to list
+#     ansible.builtin.debug:
+#       msg: " Cricketers are {{ CRICKETERS | split(',') }}"
+
+
+#-----------------------------------------------------------
+
+- name: object to list
   hosts: local
   connection: local
   vars:
-    CRICKETERS: "rohit,virat,bumrah"
+    CRICKETERS:
+      NAME: Rohit Sharma
+      Age: 38
+      Format: Ipl,T20
   tasks:
 
-  - name: print string to list
+  - name: convert oject to list
     ansible.builtin.debug:
-      msg: " Cricketers are {{ CRICKETERS | split(',') }}"
+      msg: "{{ CRICKETERS | dict2items }}"
