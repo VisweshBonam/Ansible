@@ -48,16 +48,26 @@
 
    #--------------------------------------------------------
 
-- name: print file level variable
+# - name: print file level variable
+#   hosts: local
+#   connection: local
+#   vars_files:
+#   - practiceinfo.yaml
+#   tasks:
+#   - name: print info
+#     ansible.builtin.debug:
+#       msg: "I am {{ NAME }} , with {{ Age }}"
+
+#--------------------------------------------------------
+
+
+- name: inventory level info
   hosts: local
   connection: local
-  vars_files:
-  - practiceinfo.yaml
   tasks:
-  - name: print info
+  - name: print inventory level info
     ansible.builtin.debug:
       msg: "I am {{ NAME }} , with {{ Age }}"
-
 
 
 
