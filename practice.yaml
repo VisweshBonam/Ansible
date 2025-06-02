@@ -229,16 +229,33 @@
 
 #-----------------------------------------------------------
 
-- name: object to list
+# - name: object to list
+#   hosts: local
+#   connection: local
+#   vars:
+#     CRICKETERS:
+#       NAME: Rohit Sharma
+#       Age: 38
+#       Format: Ipl,T20
+#   tasks:
+
+#   - name: convert oject to list
+#     ansible.builtin.debug:
+#       msg: "{{ CRICKETERS | dict2items }}"
+
+
+#-----------------------------------------------------------
+
+- name: list to object
   hosts: local
   connection: local
   vars:
     CRICKETERS:
-      NAME: Rohit Sharma
-      Age: 38
-      Format: Ipl,T20
-  tasks:
+    - {"key": "name", "value": "Rohit Sharma"}
+    - {"key": "age", "value": "25"}
+    - {"key": "Format", "value": "T20"}
 
-  - name: convert oject to list
+  tasks:
+  - name: print list2object
     ansible.builtin.debug:
-      msg: "{{ CRICKETERS | dict2items }}"
+      msg: "{{ CRICKETERS | items2dict }}"
