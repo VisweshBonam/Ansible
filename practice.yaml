@@ -10,6 +10,7 @@
 #     ansible.builtin.debug:
 #       msg: "I am {{ NAME }} , with {{ Age }}"
 
+#--------------------------------------------------------
 
 # - name: task level variables
 #   hosts: local
@@ -22,6 +23,8 @@
 #       Age: 26
 #     ansible.builtin.debug:
 #        msg: "I am {{ NAME }} , with {{ Age }}"
+
+#--------------------------------------------------------
 
 
 - name: prefernce b/w play and task level\
@@ -38,3 +41,13 @@
       Age: 53
     ansible.builtin.debug:
       msg: "I am {{ NAME }} , with {{ Age }}"
+
+  - name: print play info
+    ansible.builtin.debug:
+      msg: "I am {{ NAME }} , with {{ Age }}"
+
+
+
+
+
+
