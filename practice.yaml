@@ -276,12 +276,25 @@
 
 #-----------------------------------------------------------
 
-- name: print lower CASE
+# - name: print lower CASE
+#   hosts: local
+#   connection: local
+#   tasks:
+#   - name: print to lower CASE
+#     vars:
+#       name: VIswEsh Bonam
+#     ansible.builtin.debug:
+#       msg: "{{ name | lower }}"
+
+#-----------------------------------------------------------
+
+- name: check whether ip address is valid or not
   hosts: local
   connection: local
+  vars:
+    ip: "300.255.233.233"
+  
   tasks:
-  - name: print to lower CASE
-    vars:
-      name: VIswEsh Bonam
+  - name: check ip is valid or not
     ansible.builtin.debug:
-      msg: "{{ name | lower }}"
+      msg: "{{ ip | ansible.utils.ipaddr }}"
