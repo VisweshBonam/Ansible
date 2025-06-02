@@ -54,7 +54,7 @@
   vars_files:
   - practiceinfo.yaml
   tasks:
-  - name: print info\
+  - name: print info
     ansible.builtin.debug:
       msg: "I am {{ NAME }} , with {{ Age }}"
 
