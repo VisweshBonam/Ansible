@@ -80,7 +80,7 @@
       private: yes
 
     - name: print PASSWORD
-      prompt: please enter your PASSWORD\
+      prompt: please enter your PASSWORD
       private: yes
 
   tasks:
