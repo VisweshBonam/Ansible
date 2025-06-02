@@ -272,4 +272,4 @@
       name: viswesh
 
       ansible.builtin.debug:
-      msg: "{{ name | upper }}"
+        msg: "{{ name | upper }}"
