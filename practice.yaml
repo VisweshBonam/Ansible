@@ -92,14 +92,36 @@
 
   #--------------------------------------------------------
 
-- name: command line info
+# - name: command line info
+#   hosts: local
+#   connection: local
+#   tasks:
+
+#   - name: print info command
+#     ansible.builtin.debug:
+#       msg: "username is {{ USERNAME }} and Password is {{ PASSWORD }}"
+
+
+#--------------------------------------------------------
+
+- name: check when condition
   hosts: local
   connection: local
-  tasks:
+  vars:
+    NUMBER: 50
 
-  - name: print info command
+  tasks:
+  
+  - name: print number less than 50
     ansible.builtin.debug:
-      msg: "username is {{ USERNAME }} and Password is {{ PASSWORD }}"
+      msg: "the given number is {{ NUMBER }} less than 100"
+    when: NUMBER < 100
+
+  - name: print number greater than 100
+    ansible.builtin.debug:
+      msg: "the given number is {{ NUMBER }} greater than 100"
+    when: NUMBER > 100
+
 
 
 
