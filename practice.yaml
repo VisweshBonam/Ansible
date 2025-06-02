@@ -71,25 +71,35 @@
 
 #--------------------------------------------------------
 
-- name: prompt level variables
+# - name: prompt level variables
+#   hosts: local
+#   connection: local
+#   vars_prompt:
+  
+#     - name: USERNAME
+#       prompt: please enter your username
+#       private: true
+
+#     - name: PASSWORD
+#       prompt: please enter your password
+#       private: true
+
+#   tasks:
+
+#   - name: print user info
+#     ansible.builtin.debug:
+#       msg: "username is {{ USERNAME }} and Password is {{ PASSWORD }}"
+
+  #--------------------------------------------------------
+
+- name: command line info
   hosts: local
   connection: local
-  vars_prompt:
-  
-    - name: USERNAME
-      prompt: please enter your username
-      private: true
-
-    - name: PASSWORD
-      prompt: please enter your password
-      private: true
-
   tasks:
 
-  - name: print user info
+  - name: print info command
     ansible.builtin.debug:
       msg: "username is {{ USERNAME }} and Password is {{ PASSWORD }}"
-
 
 
 
