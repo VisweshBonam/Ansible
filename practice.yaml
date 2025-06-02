@@ -154,16 +154,32 @@
 
 #--------------------------------------------------------
 
-- name: loops
-  hosts: local
-  connection: local
+# - name: loops
+#   hosts: local
+#   connection: local
+#   tasks:
+
+#   - name: print loop values
+#     ansible.builtin.debug:
+#       msg: "print names: {{ item }}"
+#     loop:
+#     - Suresh
+#     - viswesh
+#     - varsha
+
+#--------------------------------------------------------
+
+- name: install packages
+  hosts: frontend
+  become: yes
   tasks:
 
-  - name: print loop values
-    ansible.builtin.debug:
-      msg: "print names: {{ item }}"
+  - name: install packages using loops
+    ansible.builtin.dnf:
+      name: "{{ item }}"
+      state: present
     loop:
-    - Suresh
-    - viswesh
-    - varsha
-    
+
+    - nginx
+    - zip
+    - mysql
