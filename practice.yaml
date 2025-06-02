@@ -86,7 +86,7 @@
   tasks:
   - name: print USERNAME and PASSWORD 
     ansible.builtin.debug:
-      msg: "I am {{ USERNAME}}, my password is {{ PASSWORD }}"
+      msg: "I am {{ USERNAME }}, my password is {{ PASSWORD }}"
 
 
 
