@@ -263,13 +263,25 @@
 #-----------------------------------------------------------
 
 
-- name: change word to Upper CASE
+# - name: change word to Upper CASE
+#   hosts: local
+#   connection: local
+#   tasks:
+#   - name: print name in upper CASE
+#     vars:
+#       name: viswesh
+
+#     ansible.builtin.debug:
+#       msg: "{{ name | upper }}"
+
+#-----------------------------------------------------------
+
+- name: print lower CASE
   hosts: local
   connection: local
   tasks:
-  - name: print name in upper CASE
+  - name: print to lower CASE
     vars:
-      name: viswesh
-
+      name: VIswEsh Bonam
     ansible.builtin.debug:
-      msg: "{{ name | upper }}"
+      msg: "{{ name | lower }}"
