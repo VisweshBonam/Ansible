@@ -11,14 +11,30 @@
 #       msg: "I am {{ NAME }} , with {{ Age }}"
 
 
-- name: task level variables
+# - name: task level variables
+#   hosts: local
+#   connection: local
+#   tasks:
+
+#   - name: print task level viswesh info
+#     vars:
+#       NAME: viswesh
+#       Age: 26
+#     ansible.builtin.debug:
+#        msg: "I am {{ NAME }} , with {{ Age }}"
+
+
+- name: prefernce b/w play and task level\
   hosts: local
   connection: local
+  vars:
+    NAME: Suresh
+    Age: 53
   tasks:
 
-  - name: print task level viswesh info
+  - name: print info
     vars:
-      NAME: viswesh
+      NAME: Viswesh
       Age: 26
     ansible.builtin.debug:
-       msg: "I am {{ NAME }} , with {{ Age }}"
+      msg: "I am {{ NAME }} , with {{ Age }}"
