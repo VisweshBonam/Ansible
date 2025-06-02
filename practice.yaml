@@ -246,16 +246,30 @@
 
 #-----------------------------------------------------------
 
-- name: list to object
+# - name: list to object
+#   hosts: local
+#   connection: local
+#   vars:
+#     CRICKETERS:
+#     - {"key": "name", "value": "Rohit Sharma"}
+#     - {"key": "age", "value": "25"}
+#     - {"key": "Format", "value": "T20"}
+
+#   tasks:
+#   - name: print list2object
+#     ansible.builtin.debug:
+#       msg: "{{ CRICKETERS | items2dict }}"
+
+#-----------------------------------------------------------
+
+
+- name: change word to Upper CASE
   hosts: local
   connection: local
-  vars:
-    CRICKETERS:
-    - {"key": "name", "value": "Rohit Sharma"}
-    - {"key": "age", "value": "25"}
-    - {"key": "Format", "value": "T20"}
-
   tasks:
-  - name: print list2object
-    ansible.builtin.debug:
-      msg: "{{ CRICKETERS | items2dict }}"
+  - name: print name in upper CASE
+    vars:
+      name: viswesh
+
+      ansible.builtin.debug:
+      msg: "{{ name | upper }}"
