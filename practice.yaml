@@ -75,13 +75,13 @@
   hosts: local
   connection: local
   vars_prompt:
-    - name: print USERNAME
-      prompt: please enter your USERNAME
-      private: yes
+  - name: print USERNAME
+    prompt: please enter your USERNAME
+    private: yes
 
-    - name: print PASSWORD
-      prompt: please enter your PASSWORD
-      private: yes
+  - name: print PASSWORD
+    prompt: please enter your PASSWORD
+    private: yes
 
   tasks:
   - name: print USERNAME and PASSWORD 
