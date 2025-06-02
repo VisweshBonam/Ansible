@@ -204,11 +204,24 @@
 
 #-----------------------------------------------------------
 
-- name: check default function
+# - name: check default function
+#   hosts: local
+#   connection: local
+#   tasks:
+  
+#   - name: print default value
+#     ansible.builtin.debug:
+#       msg: "{{ person | default('vishu')}}"
+
+#-----------------------------------------------------------
+
+- name: string to list
   hosts: local
   connection: local
+  vars:
+    CRICKETERS: "rohit,virat,bumrah"
   tasks:
-  
-  - name: print default value
+
+  - name: print string to list
     ansible.builtin.debug:
-      msg: "{{ person | default('vishu')}}"
+      msg: " Cricketers are {{ CRICKETERS | split(',') }}"
