@@ -271,5 +271,5 @@
     vars:
       name: viswesh
 
-      ansible.builtin.debug:
-        msg: "{{ name | upper }}"
+    ansible.builtin.debug:
+      msg: "{{ name | upper }}"
