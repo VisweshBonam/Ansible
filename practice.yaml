@@ -61,13 +61,32 @@
 #--------------------------------------------------------
 
 
-- name: inventory level info
+# - name: inventory level info
+#   hosts: local
+#   connection: local
+#   tasks:
+#   - name: print inventory level info
+#     ansible.builtin.debug:
+#       msg: "I am {{ NAME }} , with {{ Age }}"
+
+#--------------------------------------------------------
+
+- name: prompt level variables
   hosts: local
   connection: local
+  vars_prompt:
+    - name: print USERNAME
+      prompt: please enter your USERNAME
+      private: yes
+
+    - name: print PASSWORD
+      prompt: please enter your PASSWORD\
+      private: yes
+
   tasks:
-  - name: print inventory level info
+  - name: print username and password 
     ansible.builtin.debug:
-      msg: "I am {{ NAME }} , with {{ Age }}"
+      msg: "I am {{ USERNAME}}, my password is {{ PASSWORD }}"
 
 
 
