@@ -104,24 +104,33 @@
 
 #--------------------------------------------------------
 
-- name: check when condition
+# - name: check when condition
+#   hosts: local
+#   connection: local
+#   vars:
+#     NUMBER: 500
+
+#   tasks:
+  
+#   - name: print number less than 50
+#     ansible.builtin.debug:
+#       msg: "the given number is {{ NUMBER }} less than 100"
+#     when: NUMBER < 100
+
+#   - name: print number greater than 100
+#     ansible.builtin.debug:
+#       msg: "the given number is {{ NUMBER }} greater than 100"
+#     when: NUMBER > 100
+
+#--------------------------------------------------------
+
+- name: gathering facts
   hosts: local
   connection: local
-  vars:
-    NUMBER: 500
-
   tasks:
-  
-  - name: print number less than 50
+  - name: print gathering facts
     ansible.builtin.debug:
-      msg: "the given number is {{ NUMBER }} less than 100"
-    when: NUMBER < 100
-
-  - name: print number greater than 100
-    ansible.builtin.debug:
-      msg: "the given number is {{ NUMBER }} greater than 100"
-    when: NUMBER > 100
-
+      msg: "{{ ansible_facts }}"
 
 
 
