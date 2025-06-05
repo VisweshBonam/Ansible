@@ -11,8 +11,9 @@
   - name: print user exsist or not
     ansible.builtin.debug:
       msg: "roboshop user already exsist"
-    when: user_output.rc != 0
+    when: user_output.rc == 0
 
   - name: create roboshop user
     become: yes
     ansible.builtin.command: useradd roboshop
+    when: user_output.rc != 0
