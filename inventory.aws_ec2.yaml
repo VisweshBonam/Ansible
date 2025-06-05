@@ -2,10 +2,10 @@ plugin: amazon.aws.aws_ec2
 regions:
 - us-east-1
 filters:
-  tag:name: frontend
+  tag:name: Ansible Master
   instance-state-name: running
 hostnames:
-  -ip-address
+  -private-ip-address
 compose:
   ansible_hoste: private-ip-address
 
