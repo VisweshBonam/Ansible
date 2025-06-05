@@ -5,7 +5,7 @@ filters:
   tag:name: Ansible master
   instance-state-name: running
 hostnames:
-  -private-ip-address
+  - private-ip-address
 compose:
   ansible_hoste: private-ip-address
 
