@@ -14,5 +14,5 @@
     when: user_output.rc != 0
 
   - name: create roboshop user
-    ansible.builtin.command: adduser roboshop
-    
+    become: yes
+    ansible.builtin.command: useradd roboshop
