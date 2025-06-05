@@ -7,7 +7,7 @@ filters:
 hostnames:
   - private-ip-address
 compose:
-  ansible_hoste: private-ip-address
+  ansible_hoste: private_ip_address
 
 
 
