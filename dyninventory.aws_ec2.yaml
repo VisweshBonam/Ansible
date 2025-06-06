@@ -9,6 +9,11 @@ filters:
   tag:Name: Ansible
   instance-state-name : running
 
+keyed_groups:
+- key: tags.Name
+  prefix: "dynamic"
+  seperator: "-"
+
 hostnames:
   - private-ip-address
 
