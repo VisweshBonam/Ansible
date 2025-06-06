@@ -6,7 +6,7 @@ regions:
 - us-east-1
 
 filters:
-  tag:Name: Ansible
+  tag:Name: frontend
   instance-state-name : running
 
 keyed_groups:

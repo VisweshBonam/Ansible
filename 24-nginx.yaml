@@ -1,6 +1,7 @@
 - name: configure nginx
-  hosts: dynamic_Ansible
+  hosts: dynamic_frontend
   become: yes
+  serial: 3
   tasks:
 
   - name: install
