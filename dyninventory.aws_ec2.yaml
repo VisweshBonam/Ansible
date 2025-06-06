@@ -10,7 +10,7 @@ regions:
 keyed_groups:
 - key: tags.Name
   prefix: "dynamic"
-  seperator: "-"
+  seperator: "_"
 
   filters:
   tag:Name: frontend
