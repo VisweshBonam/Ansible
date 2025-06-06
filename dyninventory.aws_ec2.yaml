@@ -7,7 +7,7 @@ regions:
 
 filters:
   tag:Name: Ansible
-  instances-state-name : running
+  instance-state-name : running
 
 hostnames:
   - private-ip-address
