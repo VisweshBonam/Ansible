@@ -13,11 +13,13 @@ keyed_groups:
   seperator: "_"
 
   filters:
-  tag:Name: frontend
-  instance-state-name : running
+    tag:Name: frontend
+    instance-state-name : running
 
 hostnames:
   - private-ip-address
 
 compose:
   ansible_host: private_ip_address
+
+
