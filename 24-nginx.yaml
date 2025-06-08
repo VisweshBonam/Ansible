@@ -1,7 +1,7 @@
 - name: configure nginx
   hosts: dynamic_frontend:dynamic_backend
   become: yes
-  serial: 2
+  serial: 1
   tasks:
 
   - name: install
