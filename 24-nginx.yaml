@@ -1,5 +1,5 @@
 - name: configure nginx
-  hosts: dynamic_frontend:dynamic_backend:dynamic_middle
+  hosts: dynamic_frontend:dynamic_backend:dynamic_middlend
   become: yes
   serial: 1
   tasks:
